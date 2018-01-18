@@ -31,7 +31,7 @@ jobs:
           path: app/build/test-results
       - run:
           name: Update Android SDK
-          command: sdkmanager --update
+          command: sdkmanager --update | sdkmanager "emulator"
       - run:
           name: Setup emulator
           command: sdkmanager "system-images;android-22;default;armeabi-v7a" && echo "no" | avdmanager create avd -n test -k "system-images;android-22;default;armeabi-v7a"
